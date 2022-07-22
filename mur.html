@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <title>Semaine Blocage</title>
+	    <link rel="shortcut icon" href="media/brick.ico" type="image/x-icon" />
+	    <!--<link rel="stylesheet" type="text/css" href="style.css"/>-->
+	    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 800px)" href="style.css"/>
+	    <link rel="stylesheet" type="text/css" media="screen and (max-width: 799px)" href="mobilestyle.css"/>
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400&display=swap" rel="stylesheet">
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+	</head>
+
+<body>
+
+<section class="screen">
+	<video id="video" muted><source src="media/fond.mov" type="video/mp4"></video>
+
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section class="demo">
+					
+					<div class="spacer s2"></div>
+					<div class="spacer s0" id="trigger"></div>
+					<div id="imagesequence">
+						<img id="myimg" src="media/anim1.png"><br>
+					</div>
+					<div class="spacer s2"></div>
+					
+				</section>
+				<div class="spacer s_viewport"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="paint">
+  		<canvas id="myCanvas"></canvas>
+	</div>
+
+	<section class="warning">
+		<p>Élargis ta fenêtre, ça sera plus confort !</p>
+	</section>
+
+		    
+    <!--<div id="titre"> 
+        <img width="25%" height="auto" src="media/titre.gif" alt="slogan"/>
+    </div>-->
+
+    <!--J'ai rajouté ça, mais le titre est voué à changer encore askip:-->
+    <div id="titre"> 
+        <h5>L'ENSCI</h5>
+    </div>    
+    <div id="soustitre"> 
+        <img width="50%" height="auto" src="media/faitlemur2.gif"/>
+    </div>
+
+    <div id="langue"> 
+        <a class="switch">fr</a>&nbsp;/&nbsp;<a class="switch" id="anglais" href="muranglais.html">en</a>
+    </div> 
+        
+    
+<!--ya ce truc là qui sert à rien:-->
+    <img width="25%" height="auto"/>
+<!--mais quand on l'enlève ça décalle le canvas je sais pas pk-->
+
+	<div id="historique">
+		<div class="text">
+            <h2>
+                <br><br><br><br><br><br><br><br><br><br><br><br>Les étudiant·e·s de l'ENSCI-Les Ateliers sont mobilisé·e·s depuis plusieurs <strike>jours</strike> semaines contre la nomination arbitraire par le ministère de la Culture du nouveau directeur. Voici le journal de cette mobilisation.
+            </h2>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="text">
+            <h4>
+                petit recap des événements
+            </h4>
+        </div>
+
+		<div class="image">
+            
+            <h1>13/02</h1>
+            <h2>
+                &#8618;<a id="popup">Yann Fabès<span><img width="30%" height="auto" src="media/yannfabes.jpg" alt="slogan" class="imageSpin" /></span></a> démissionne suite à un désaccord avec le ministère de la Culture sur le montant de sa rémunération.
+            </h2>
+        </div>  
+        
+        <div class="text">
+            <h1>19/02</h1>
+            <h2>
+                &#8618;Nous, étudiants et étudiantes de l’ENSCI écrivons une lettre aux tutelles (ministère de la Culture + ministère de l’Économie).
+                <br><a>&#8597;</a><span><h3>Nous faisons part de nous inquiétudes quant à la vacance du poste de direction.</h3></span>
+            </h2>
+        </div>  
+
+            
+                
+        <div class="text">
+            <h1>16/05</h1>
+            <h2>
+                &#8618;Suite à notre lettre aux tutelles, Sylviane Tarsot-Gillery, directrice générale de la direction générale à la création artistique (DGCA), dépendant du ministère de la Culture, vient nous rencontrer.
+                <br><a>&#8597;</a><span><h3>
+                Elle nous assure que les procédures de recrutement sont en cours et qu’une direction sera nommée d’ici la rentrée. Elle nous demande de définir les critères importants du profil idéal du directeur ou de la directrice selon les élèves.</h3></span>
+            </h2>
+        </div>  
+
+                
+        <div class="text">
+            <h1>03/07</h1>
+            <h2>
+                &#8618;Suite à la pré-sélection par les tutelles, 3 candidat·e·s parmi les 11 postulant·e·s sont présenté·e·s aux membres du conseil d’administration.
+                <br><a>&#8597;</a><span><h3>
+                - Jeanne Gailhoustet : Directrice de l’Ecole Nationale Supérieure d’Art de Limoges-Aubusson<br>
+                - Emmanuel Mahé : Directeur de la Recherche à l’Ecole Nationale Supérieure des Arts Décoratifs<br>
+                - Rémy Fenzy : Ancien directeur de l’Ecole Nationale Supérieure de Photographie d’Arles<br><br>
+
+                Les élèves élu·e·s aux différents conseils de l’école partagent les dossiers de candidature et organisent des entretiens en visio-conférence avec chacun·e d’entre eux, ouvert à tous et toutes les élèves. Une vingtaine d’élèves assistent à chaque entretien.<br>
+
+                Les élèves plébiscitent M. Mahé et M<sup>me</sup> Gailhoustet. Le personnel est en accord avec les élèves. Les deux candidats semblent s’être bien renseignés sur l’ENSCI et portent un projet et une vision pour l’école dans lesquels les élèves se retrouvent.<br>
+
+                Suite à ces débats, la découverte d’une lettre ouverte écrite par les étudiants de l’Ecole de Photographie d’Arles renforce notre positionnement. La lettre dénonce un manque de transparence dans les prises de décision et une mauvaise gestion des relations humaines.</h3></span>
+            </h2>
+        </div>  
+
+                
+        <div class="text">   
+            <h1>05/07</h1>
+            <h2>
+                &#8618;Le conseil d’administration a lieu.
+                <br><a>&#8597;</a><span><h3>Sont présent·e·s les représentant·e·s des tutelles (Culture et Économie), des membres du personnel, des élèves et également des professionnel·le·s du design.
+                <br>Après présentation des trois candidatures, discussions et débats, les élèves élu·e·s lisent un texte qui résume les débats avec les élèves et leur position : <br>
+                Deux votes pour pour les candidatures de M<sup>me</sup> Gailhoustet et M. Mahé, la note d’intention de M. Fenzy étant considéré comme « une accumulation de mesures généralistes, souvent déjà existantes à l’Ensci - permettant de croire qu’il ne s’est pas intéressé au modèle même de notre école. »<br>
+                Le représentant du Ministère de l'économie et des finances propose que les représentant·e·s des tutelles ne votent pas l’avis du CA, car ils ont déjà pré-sélectionné ces trois candidatures. Les représentant·e·s de la culture s’y opposent.<br>
+                Au cours des débats, qui vont largement vers un plébiscite de M<sup>me</sup> Gailhoustet et de M. Mahé, les représentant·e·s du ministère de la culture ne cessent de remettre la candidature de M. Fenzy sur la table.<br>
+                Les résultats du vote consultatif (13 personnes) sont :<br>
+                - 11 voix pour M<sup>me</sup> Gailhoustet<br>
+                - 7 voix pour M. Mahé<br>
+                - 4 voix pour M. Fenzy<br>
+                Le représentant de l’économie et des finances s’abstient de voter.<br>
+                Les 4 voix pour M. Fenzy sont celles de 3 représentant·e·s du ministère de la culture et d’un des représentants des organisations professionnelles.<br>
+                Cet avis est remis aux tutelles. Ils seront décisionnaires, mais dans les faits, le ministère de la culture tranchera, et celui de l‘industrie se rangera à son avis.</h3></span>
+            </h2>
+        </div>  
+
+                
+        <div class="image">
+            <h1>25/07</h1>
+            <h2>
+                &#8618;Suite à des rumeurs concernant une éventuelle nomination de M. Fenzy, nous envoyons <a id="popup">une nouvelle lettre<span><img width="100%" height="auto" src="media/hibou.gif" alt="slogan"/></span></a> aux tutelles pour réaffirmer notre opposition à cette candidature. Celle-ci est aussi transférée aux membres du conseil d’administration.
+            </h2>
+        </div> 
+
+        <div class="text">
+            <h1>30/07</h1>
+            <h2>
+                &#8618;M. Mazoyer, ancien élève de l'école, représentant de l’Alliance France Design (AFD) et présent lors du conseil d’administration, adresse une lettre au Ministère pointant le désaveu du CA suite à sa consultation.
+                <br><a>&#8597;</a><span><h3>
+                Contrairement à la nomination de la précédente direction de l'école où l’orientation du CA avait été prise en compte, il semble qu’il n’ait actuellement plus la même écoute de la part des ministères. M. Mazoyer s’inquiète et questionne donc le réel poids du CA notamment dans des moments si importants. Il demande aux ministères des éclaircissements sur le rôle des administrateurs et émet une réserve sur la poursuite de son mandat au sein du CA. <br>
+				Au même moment, des candidat·e·s sont recherché·e·s pour la présidence du CA dont le poste est vacant depuis quelques temps. Une ancienne élève, pressentie, refuse la nomination en apprenant qu’elle risque fortement d’être conjointe à celle de M. Fenzy.
+				</h3></span>
+            </h2>
+        </div>    
+
+                
+        <div class="image">
+            <h1>06/08</h1>
+            <h2>
+                &#8618;M<sup>me</sup> Gisclard, également représentante de l’Alliance France Design, nous soutient à son tour, en envoyant une <a id="popup">lettre aux ministères<span><img width="100%" height="auto" src="media/lettre.gif" alt="slogan"/></span></a>, cette fois-ci au nom de l’AFD.
+            </h2>
+        </div> 
+
+                
+        <div class="image">
+            <h1>04/09</h1>
+            <h2>
+                &#8618;Entretien téléphonique entre Sylviane Tarsot-Gillery et les élèves élu·e·s pour obtenir des explications quant au choix du <a id="popup">ministère<span><img width="20%" height="auto" src="media/riester.jpg" alt="slogan" class="imageSpin2"/></span></a>.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                M<sup>me</sup> Tarsot-Gillery affirme que M. Fenzy avait su être plus convaincant au moment de son entretien lors du jury de la short-list et qu'il aurait repensé certaines de ses positions et ambitions pédagogiques après s’être entretenu entre autres avec le précédent directeur. Nous demandons alors qu’on nous fournisse des éléments convaincants.
+                </h3></span>
+            </h2>
+        </div> 
+                
+        <div class="text">
+            <h1>23/09</h1>
+            <h2>
+               &#8618;Suite à l'entretien téléphonique, une rencontre est organisée entre des représentants des étudiant·e·s, trois membres du personnel de l’ENSCI, M. Fenzy, M<sup>me</sup> Diakité Kaba, ancienne étudiante pressentie comme nouvelle présidente du CA, ainsi que deux représentants du ministère de la Culture.
+               <br><a>&#8597;</a><span><h3>
+               L’échange est respectueux et direct. Les étudiant·e·s interrogent M. Fenzy sur son projet et sa vision pour l’école. Cette discussion, bien que cordiale, n’est pas convaincante. M. Fenzy ne semble pas porter de vision pour l’ENSCI, il fait valoir une période d’observation et explique ne pas vouloir imposer de feuille de route pré-établie.<br> 
+			   En fin d’après-midi, une assemblée générale est organisée à l’ENSCI. La décision est prise de maintenir notre opposition à la nomination de M. Fenzy et de contester le processus de recrutement opaque mené par les ministères ainsi que l’absence de prise en compte de notre avis. Enfin, l’assemblée générale décide d’organiser une manifestation le lendemain après-midi devant les locaux de la Direction Générale de la Création Artistique.
+			   </h3></span>
+            </h2>
+        </div>  
+             
+                
+        <div class="image">
+            <h1>24/09</h1>
+            <h2>
+                &#8618;Après une <a id="popup">matinée de préparation<span><img width="50%" height="auto" src="media/prep.jpg" alt="slogan" /></span></a>, les étudiant·e·s vont <a id="popup">manifester<span><img width="40%" height="auto" src="media/banderole.jpg" alt="slogan"/></span></a> devant la DGCA. Nous protestons contre la nomination d’un <a id="popup">directeur sans vision<span><img width="50%" height="auto" src="media/colere.jpg" alt="slogan"/></span></a>, contre <a id="popup">l’opacité du processus<span><img width="40%" height="auto" src="media/slogan.jpg" alt="slogan"/></span></a> et contre le manque d’<a id="popup">écoute<span><img width="40%" height="auto" src="media/manif.jpg" alt="slogan"/></span></a> de nos positions.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                Une délégation de 6 élèves est reçue dans l’après-midi par M<sup>me</sup> Tarsot-Gillery, M. Perrault, M<sup>me</sup> Chapus et M. Brunaux. Nous réitérons nos arguments et nos revendications en demandant l’écartement de la candidature de M. Fenzy au profit d’un·e des deux autres candidat·e·s. La DGCA argumente le choix par le ministre de M. Fenzy par la volonté de proposer un deuxième mandat à Limoges pour M<sup>me</sup> Gailhoustet et par le fait que M. Mahé n’ait jamais dirigé d’école nationale supérieure auparavant. M. Fenzy a selon eux plutôt bien réussi dans sa direction précédente. Il nous est également précisé qu’il est actuellement libre et souhaite comme eux être nommé à la tête d’une école. Pour nous, il semble donc être un choix par défaut, et non décidé en fonction du projet porté pour l’ENSCI.<br>
+				À la fin de la rencontre, nous obtenons de la DGCA qu’elle transmette nos revendications aux ministres. Elle s’engage alors à les contacter dans l’après-midi et annonce revenir vers nous avant la fin de la semaine.
+				</h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>26/09</h1>
+            <h2>
+               &#8618;Nous envoyons des lettres d’invitation aux ministres leur demandant de venir nous rencontrer afin de faire valoir nos arguments et leur faire découvrir l’école, ainsi qu’à M. Jack Lang pour demander son soutien.
+            </h2>
+        </div>    
+                
+        <div class="image">
+            <h1>26/09 > 17/10</h1>
+            <h2>
+                &#8618;Sans nouvelles de la DGCA et des tutelles, nous passons plusieurs appels téléphoniques qui resteront <a id="popup">sans réponse<span><img width="50%" height="auto" src="media/vent.gif" alt="slogan"/></span></a>.
+            </h2>
+        </div>
+
+        <div class="image">
+            <h1>17/10</h1>
+            <h2>
+               &#8618;Nous recevons un mail du ministre de l’Industrie et de l’Économie précisant qu’il n’a pas le temps de venir nous rencontrer. Il <a id="popup">réaffirme<span><img width="50%" height="auto" src="media/deso.png" alt="slogan" style="filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));"/></span></a> que le dossier relève des attributions du ministre de la Culture.
+            </h2>
+        </div> 
+
+                
+        <div class="image">
+            <h1>21/10</h1>
+            <h2>
+               &#8618;Nous recevons un <a id="popup">mail<span><img width="100%" height="auto" src="media/incendiaire.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> de la part du ministère de la Culture nous annonçant la nomination imminente de M. Fenzy.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                Une assemblée générale est immédiatement organisée. La décision est prise de maintenir notre opposition à la nomination de M. Fenzy ainsi qu'au processus trouble et sans concertation du ministère. Les étudiant·e·s décident de mettre en place une semaine de mobilisation à partir de début novembre pour protester et empêcher l’arrivée de M. Fenzy.
+                   </h3></span>
+            </h2>
+        </div> 
+
+        <div class="text">
+            <h1>22/10 > 31/10</h1>
+            <h2>
+               &#8618;Un petit groupe d’élèves planifie et organise un programme pour la mobilisation. En même temps, ils et elles essaient de joindre M. Fenzy pour le prévenir des événements à venir dans un soucis de transparence.
+            </h2>
+        </div>  
+                
+                
+        <div class="image">
+            <h1>02/11 > 03/11</h1>
+            <h2>
+               &#8618;<a id="popup">Un mur<span><img width="50%" height="auto" src="media/Construction.gif" alt="slogan"/></span></a> d’une centaine de parpaings est construit à l’entrée de la cour pour symboliser notre opposition à l’arrivée d’un nouveau directeur. Le mur respecte les normes de sécurité incendie et permet le passage.<br>&#8618;Le bureau de la direction est condamné avec deux planches sur lesquelles est inscrit : <!--« Maintenant, vous êtes au pied du mur. »-->
+            </h2>
+
+        </div>
+
+       <img src="media/pieddumur.gif" style="width: 200px; margin-left: 50%; transform: translateX(-100px);">
+
+	        <br><br><br>
+
+    </div>    
+
+    <div id="suitehistorique">
+
+		<div id="degradejaune"><br><br><br><br><br><br><!--<h4>scroll encore un peu</h4>--></div>
+		<div id="long"></div>
+
+	</div>
+
+	
+
+	<div id="frise"><i style="vertical-align: .07em;">&#9814;</i> <span>Semaine du 4 au 8 Novembre</span> <i style="vertical-align: .07em;">&#9814;</i></div>
+
+
+	<div id="brique">
+        <img width="100%" height="auto" src="media/paintparpaing.png"/>
+    </div>
+
+    <div id="note1" class="image">
+    	<h1>04/11 > 08/11</h1>
+    	<h2>&#8618;Afin de réfléchir ensemble aux événements qui ont mené à la situation actuelle, nous nous mobilisons toute la semaine sous la forme de <a id="popup">conférences<span><img width="60%" height="auto" src="media/conf.jpg" alt="slogan""></span></a>, d’<a id="popup">ateliers<span><img width="60%" height="auto" src="media/preparationdebat.jpg" alt="slogan"></span></a> et d’<a id="popup">agoras<span><img width="60%" height="auto" src="media/agoras.jpg" alt="slogan"></span></a>. Les réflexions menées et alimentées par les interventions nous laissent ainsi la possibilité de ré-interroger et d'affirmer notre positionnement collectivement.<br><br></h2>
+    </div>
+
+
+    <div id="jour0">
+        <!--<div id="soustitreactu">
+            <img width="100%" height="auto" src="media/fondations.png"/>
+        </div>-->
+        <h6>04/11</h6>
+        <img width="100%" height="auto" src="media/meudon.jpeg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Au cours de la semaine, les vitrines de l’école seront utilisées comme support de communication à l’aide de blanc de meudon.<br>Chaque soir, une assemblée générale ouverte à tous et à toutes permet de décider de la suite de la semaine.
+                </h2>
+            </div>
+        </div>       
+    </div>
+     
+    <div id="jour1">
+        <img width="100%" height="auto" src="media/bouchain.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2><br>
+                Ancien·ne·s, nouveaux et nouvelles se plongent dans les archives de l’école afin de les partager et de se les approprier.<br>Nous recevons Patrick Bouchain et Tony Côme pour une discussion autour des fondements de l’école.
+                </h2>
+            </div>
+        </div>       
+    </div>
+    
+    <div id="jour2">
+        <!--<div id="soustitreactu">
+            <img width="100%" height="auto" src="media/structures.png"/>
+        </div>-->
+        <h6>05/11</h6>
+        <img width="100%" height="auto" src="media/battle.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Une <i>Battle de Directions</i> est lancée.<br>
+            Deux équipes d’élèves et de membres du personnel construisent un projet utopique pour l’école et s’affrontent lors d’un débat.<br>
+            Cet exercice donne lieu ensuite à des propositions concrètes d’organisation pour l’école, qui laissent notamment plus de place pour l’autogestion et la prise de décision par les étudiant·e·s.
+                </h2>
+            </div>
+        </div>    
+    </div>
+    
+    <div id="jour3">
+        <img width="100%" height="auto" src="media/anciens.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Des ancien·ne·s élèves dont certain·e·s ayant participé à la Jaunisse (mouvement ayant eu lieu en 2014 à l’ENSCI) viennent partager leur expérience, les raisons, échecs et réussites de leur mobilisation.
+                </h2>                
+            </div>
+        </div>
+    </div>
+
+    <div id="note2" class="image">
+			<h1>06/11 au matin</h1>
+    		<h2>&#8618;M. Fenzy <a id="popup">appelle<span><img width="60%" height="auto" src="media/phone.gif" alt="slogan""></span></a> M<sup>me</sup> Nouguier, secrétaire générale et directrice par intérim, et lui indique être en train d'établir un nouveau projet pour l'école, avec M<sup>me</sup> Diakité Kaba. Il affirme n'avoir jamais été contacté par les élèves et ne parle pas du blocage en cours. Nous nous inquiétons de ce double-discours.
+                <br><br>
+            </h2>
+    </div>
+
+    <div id="jour4">
+        <h6>06/11</h6>
+        <img width="100%" height="auto" src="media/support.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Le documentaire <i>Politique Fiction</i> d’Alexandra Midal est projeté en sa présence.<br>Le mur se transforme en support de débat pour construire un projet et des propositions pour l’ENSCI. Un système de propositions et de vote est mis en place pour faire remonter les revendications internes les plus pertinentes et les plus soutenues.</h2>
+            </div>
+        </div>    
+    </div>
+
+    <div id="jour5">
+        <img width="100%" height="auto" src="media/textilles.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Au cours des portes ouvertes du 5<sup>e</sup>, nous découvrons de nouveaux outils et créons collectivement un drapeau aux couleurs de la mobilisation.</h2>
+            </div>
+        </div>    
+    </div>
+
+    <div id="note3" class="image">
+            <h1>06/11 au soir</h1>
+    		<h2>&#8618;Les élèves se réunissent en assemblée générale. La décision est prise de maintenir notre <a id="popup">opposition<span><img width="40%" height="auto" src="media/non.png" alt="slogan""></span></a> à la venue de M. Fenzy. Il est décidé de ne pas dialoguer avec lui et de continuer à échanger avec nos tutelles pour obtenir la prise en compte de l'avis du conseil d'administration du 05/07/2019.
+                <br><br>
+            </h2>
+    </div>
+
+    <div id="jour6">
+        <img width="100%" height="auto" src="media/camus.jpeg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Célia Houdart anime un atelier d’écriture et nous donne des conseils éclairés pour construire notre revendication et nos moyens de communication à l'extérieur.<br> Nous réfléchissons aux moyens d'action que nous mettrons en place pour la suite à partir de l'expérience d'Antoine Camus, ancien élève, au sein du mouvement Extinction Rebellion. Nous adopterons notamment les règles de répartition de la parole et de prise de décision collective qu'il propose. Des petits groupes spécialisés plancheront sur les diférentes propositions à débattre et voter lors des agoras.</h2>
+            </div>
+        </div>    
+    </div>
+
+    <div id="jour7">
+        <h6>07/11</h6>
+        <img width="100%" height="auto" src="media/27region.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Deux designers de la 27<sup>e</sup> Région viennent nous parler de design des politiques publiques.<br>Aurélien Fouillet nous parle engagement, design et politique.</h2>
+            </div>
+        </div>    
+    </div>
+
+    <div id="jour8">
+        <img width="100%" height="auto" src="media/gauthier.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Gauthier Roussilhe nous parle du design à l'heure de la crise écologique et économique suite à la projection de son documentaire <i>Ethics for Design</i>.</h2>
+            </div>
+        </div>    
+    </div>
+
+    <div id="jour9">
+        <h6>08/11</h6>
+        <img width="100%" height="auto" src="media/graphiste.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Sébastien Marchal, graphiste militant et ancien étudiant de l'ENSCI, vient parler de son travail et des liens entre design graphique, image et politique.</h2>
+            </div>
+        </div>    
+    </div>
+
+    <div id="jour10">
+        <img width="100%" height="auto" src="media/charrette.jpg"/>
+        <div id="backgroundtextactu">
+            <div id="textactu">
+                <h2>Radio Charrette, collectif radiophonique d’étudiant·es et d'ancien·nes de l’ENSCI, vient animer une soirée de clôture de la semaine pour fêter notre mobilisation.</h2>
+            </div>
+        </div>    
+    </div>
+
+
+    <div id="historique2"><br><br><br><br><br><br><br><br><br><br><br><br>
+
+		<div class="image">
+            
+            <h1>09/11 > 10/11</h1>
+            <h2>
+                &#8618;Suite aux messages de soutien de nombreuses personnes extérieures à l’école, nous préparons un dossier pour le <a id="popup">diffuser<span><img width="55%" height="auto" src="media/dossier.jpeg" alt="slogan"/></span></a> le plus largement possible afin de médiatiser notre mobilisation et ses enjeux.
+                <img id="fleche" src="media/fleche3.png">
+                <a href="https://drive.google.com/drive/folders/1fP9PtWY4LLHmdWh-r6Hd-bC-7AmjuSjS" target="_blank"><img src="media/dossierpresse.png" style="position: absolute; display:block; margin-left: -45%; margin-top: -10%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            </h2>
+        </div>  
+        
+        <div class="text">
+            <h1>12/11</h1>
+            <h2>
+                &#8618;Nous envoyons des mails à M. Fenzy et au ministère de la Culture pour les informer à nouveau de nos revendications.<br><a>&#8597;</a><span><h3>
+                - La prise en compte de l’avis du CA du 5 juillet<br>
+                - et notre refus de considérer M. Fenzy comme un interlocuteur.</h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>14/11</h1>
+            <h2>
+                &#8618;M<sup>me</sup> Tarsot-Gillery, directrice générale de la DGCA, demande de recevoir une délégation lundi suivant, le 18 novembre, à 18:00.
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>15/11</h1>
+            <h2>&#8618;Nous recevons un communiqué de la part des étudiant·e·s et du personnel de l'ENSP Arles en soutien à la mobilisation à l'ENSCI.<br id="historique3"><a>&#8597;</a><span><h3>On peut y lire que « le bilan de Rémy Fenzy à l'ENSP Arles est un échec, n'ayant su donner ni contrat de performance ni objectif pédagogique tout au long de ses mandats. »</h3></span>
+            &#8618;Nous prenons connaissance de la nomination par arrêté du ministère de la Culture de Rémy Fenzy comme directeur de l’ENSCI à compter de mercredi 13 novembre.<br>
+            &#8618;Nous organisons une agora au cours de laquelle nous votons, à l’unanimité, un blocage total de l’école.<br><a>&#8597;</a><span><h3>Concrètement, cela signifie :<br>
+            - De bloquer l'entrée de l'établissement au personnel de l'école lundi 18 novembre.  Le blocage a pour but de créer une <i>nuisance</i> suffisante pour faire réagir les ministères. Bloquer tou·te·s les membres du personnel sans distinction leur permet, par ailleurs, d'éviter de prendre position.<br>
+        	- De poser un lapin à la DGCA pour le rendez-vous du lundi 18 novembre. L'objet de la réunion est de préparer « l’arrivée de la nouvelle équipe de direction de l’ENSCI » ; s’y rendre revient à accepter l'arrivée de M. Fenzy. </h3></span>
+			</h2>
+        </div>
+
+
+       <div class="image">
+            
+            <h1>17/11</h1>
+            <h2>
+                &#8618;Nous nous réunissons pour formaliser et organiser le <a id="popup">blocage<span><img width="55%" height="auto" src="media/blocage.jpg" alt="slogan"/></span></a>.
+            </h2>
+        </div>
+
+        <div class="image">
+            
+            <h1>18/11</h1>
+            <h2>
+                &#8618;Dès 6 heures du matin, nous débutons le <a id="popup">blocage<span><img width="55%" height="auto" src="media/blocage2.jpeg" alt="slogan"/></span></a> de l’école. Le mouvement durera jusqu’à ce qu’on nous propose une réelle alternative à M.Fenzy.<br>
+                &#8618;La DGCA nous convie à 17:30 à une réunion avec une représentante du cabinet du ministre.<br>
+                &#8618;Nous y allons avec deux grandes <a id="popup">banderoles<span><img width="60%" height="auto" src="media/bande.jpeg" alt="slogan"/></span></a> « CA ignoré, ENSCI bloquée », élèves et personnel réuni·e·s.<br>
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2>
+                &#8618;Une délégation de 4 représentant·e·s d’élèves et 4 représentant·e·s du personnel sont reçu·e·s. On nous propose toujours d’accueillir M. Fenzy à l’école pour un débat.<br><a>&#8597;</a><span><h3>Nos interlocuteurs et interlocutrices maintiennent qu'aucun retour en arrière de la part du ministère quant à la nomination de M. Fenzy n'est possible. Ils nous est proposé d'entamer un dialogue avec M. Fenzy et M<sup>me</sup> Diakité Kaba pour débloquer la situation. Malgré leur pertinence, nos critiques du mode de nomination sont encore balayées d'un revers de main étant donné le fait que le processus n'est pas amené à changer dans l'immédiat.</h3></span>
+            </h2>
+        </div> 
+
+        <div class="image">
+
+        	<h1>19/11</h1>
+            <h2>
+                &#8618;La conclusion de l’échange n’est toujours <a id="popup">pas convaincante<span><img width="55%" height="auto" src="media/maintien.jpg" alt="slogan"/></span></a>, nous maintenons le blocage.
+		<div class="text">
+			<a>&#8597;</a><span><h3>Le maintien du blocage est renouvelable tous les jours suivant l'avis de l'agora.</h3></span>
+            </h2>
+        </div> 
+        <div class="text" style="margin-top: -1em;">
+            <h2>
+                &#8618;M<sup>me</sup> Diakité Kaba se rend à l’ENSCI à 18:30 pour avoir un aperçu du blocage et des grandes lignes de notre revendication .
+                <br><a>&#8597;</a><span><h3>Nous nous excusons de l’accueillir sur le pas de la porte et lui rappelons que l’école est en blocage et que nous ne sommes pas prêts à la recevoir.<br>
+                Elle repart toutefois avec le dossier de nos revendications qu'elle promet de lire. Nous lui rappelons avant son départ que&nbsp;:<br>
+            	- nous attendons d’elle de faire remonter au ministère notre position et notre détermination  ;<br>
+            	- la fin du mouvement n’aura lieu qu’au retrait de la nomination de M. Fenzy  ou à sa démission et<br>
+            	- le blocage privera sans doute l’école de la restitution des ateliers de projets aux partenaires industriels .</h3></span>
+            	<a href="https://www.telerama.fr/scenes/les-eleves-dune-ecole-de-design-dressent-un-mur-de-parpaings-contre-leur-nouveau-directeur,n6522757.php" target="_blank"><img src="media/telerama.png" style="position: absolute; display:block; margin-left: 110%; margin-top: -35%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            	<a href="https://www.lequotidiendelart.com/articles/16525-bras-de-fer-%C3%A0-l-ensci.html" target="_blank"><img src="media/jda.png" style="position: absolute; display:block; margin-left: 110%; margin-top: -10%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            	<a href="https://next.liberation.fr/amphtml/arts/2019/11/20/les-etudiants-en-design-de-l-ensci-font-bloc-contre-leur-nouveau-directeur_1764530?fbclid=IwAR0i_aKG48XwCyLy4gBFaU3DD91ygGcJbFWYALRs1m1ZcrbbYOy213aPzNw" target="_blank"><img src="media/liberation.png" style="position: absolute; display:block; margin-left: 110%; margin-top: 15%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            	<a href="https://www.lejournaldesarts.fr/campus/remy-fenzy-renonce-la-direction-de-lensci-146713" target="_blank"><img src="media/journal.png" style="position: absolute; display:block; margin-left: 110%; margin-top: 115%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            	<a href="https://intramuros.fr/demission-du-nouveau-directeur-de-lensci-les-ateliers/" target="_blank"><img src="media/intramuros.png" style="position: absolute; display:block; margin-left: 110%; margin-top: 140%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            </h2>
+        </div> 
+
+
+        <div class="text">
+        	<h1>20/11</h1>
+            <h2>
+                &#8618;M. Fenzy se rend à l'ENSCI à 9:30 mais ne parvient pas à passer le sas en raison du blocage.
+                <br><a>&#8597;</a><span><h3>Nous réitérons brièvement notre double-dénonciation et nos arguments. Le personnel l'écoute, devant l'école, durant une vingtaine de minutes.</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>
+                &#8618;Nous le <a id="popup">recontactons<span><img width="100%" height="auto" src="media/invitfenzy.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> pour poser les conditions du dialogue. Il est attendu à l'école à 16:00.
+ 
+            </h2>
+        </div> 
+        <div class="text" style="margin-top: -1em;">
+            <h2>
+                &#8618;Entretemps, des groupes de travail préparent la forme et les règles de l'accueil de M. Fenzy ainsi que les questions à lui poser. Les propositions sont adoptées collectivement lors d'une agora. 
+                <br><a>&#8597;</a><span><h3>Les questions que nous préparons pour M. Fenzy :<br>
+                Quelles sont les enjeux du design aujourd'hui selon vous ?<br>
+				Qu´est ce qui fait la singularité de l’ENSCI à vos yeux ?<br>
+				Quelle vision de l’ENSCI pour demain ?<br>
+				Selon vous, quel type de partenariat pourrait enrichir l’école ?<br>
+				Quelle est votre vision de l’ENSCI à l’international ?<br>
+				Quelles sont vos motivations concrètes à être directeur de l’ENSCI ?<br>
+				Au vu de la situation actuelle, comment imagineriez-vous diriger l’école sans avoir l'approbation des élèves et du personnel ? (surtout dans cette logique d’accordance avec les équipes)</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>
+                &#8618;Lors de la <a id="popup">réunion<span><img width="55%" height="auto" src="media/reunion.jpg" alt="slogan" /></span></a> avec M. Fenzy, nous écoutons silencieusement ses arguments et motivations, et posons uniquement les questions approuvées collectivement.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2><a>&#8597;</a><span><h3>Il apporte peu de nouveaux éléments par rapport à sa candidature initiale, que ce soit dans sa présentation générale ou dans ses réponses aux questions. Le projet reste léger et peu convaincant à nos yeux, élèves comme personnel.<br>
+            Il concède toutefois qu'il ne souhaite pas « forcer le destin » et qu'il est prêt à retirer sa candidature s'il ne réussit pas à nous convaincre.</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>&#8618;Suite au debrief de cette réunion, nous lui annonçons qu'il n'a pas réussi à nous convaincre. M. Fenzy <a id="popup">retire<span><img width="50%" height="auto" src="media/fire.gif" alt="slogan" /></span></a> officiellement sa candidature ; le ministère l’accepte.    
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>
+                &#8618;M<sup>me</sup> Diakité Kaba nous envoie un mail intitulé <a id="popup"><i>Épilogue</i><span><img width="100%" height="auto" src="media/saranpilogue.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> pour nous inviter à débloquer l'école.
+            </h2>
+        </div> 
+
+
+        <div class="image">
+            
+            <h1>21/11</h1>
+            <h2>
+                &#8618;Une agora se tient à 9:30 en vue d’un <a id="popup">déblocage<span><img width="50%" height="auto" src="media/deblocage.gif" alt="slogan"/></span></a> progressif de l’école et de la poursuite de la mobilisation et de la vigileance.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2><a>&#8597;</a><span><h3>La nomination arbitraire de M. Fenzy était un premier enjeu. Elle révèle cependant un problème de fond dans le processus de nomination d'une direction par les ministères ainsi que la volonté d’une meilleure implication des élèves et du personnel dans le modèle de gouvernance de notre école.<br> Nous décidons de profiter de cet élan commun pour entamer une nouvelle phase de construction autour de ces enjeux.</h3></span>
+            </h2>
+        </div>
+
+   		<br><br><br><br>
+    </div>
+
+    <div id="suitehistorique">
+
+		<div id="degradejaune"><br><br><br><br><br><br><!--<h4>scroll encore un peu</h4>--></div>
+
+	</div>
+
+</section> 
+
+<section class="handheld">
+		<div id="historique">
+
+        <div id="titre"> 
+            <h5>L'ENSCI</h5>
+        </div>    
+        <div id="soustitre"> 
+            <img width="50%" height="auto" src="media/faitlemur2.gif"/>
+        </div>
+
+		<div class="text">
+            <h2>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Les étudiant·e·s de l'ENSCI-Les Ateliers sont mobilisé·e·s depuis plusieurs <strike>jours</strike> semaines contre la nomination arbitraire par le ministère de la Culture du nouveau directeur. Voici le journal de cette mobilisation.
+            </h2>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br>
+
+        <div class="text">
+            <h4>
+                petit recap des événements
+            </h4>
+        </div>
+
+		<div class="image">
+            
+            <h1>13/02</h1>
+            <h2>
+                ↪<a id="popup">Yann Fabès<span><img width="60%" height="auto" src="media/yannfabes.jpg" alt="slogan" class="imageSpin" /></span></a> démissionne suite à un désaccord avec le ministère de la Culture sur le montant de sa rémunération.
+            </h2>
+        </div>  
+        
+        <div class="text">
+            <h1>19/02</h1>
+            <h2>
+                &#8618;Nous, étudiants et étudiantes de l’ENSCI écrivons une lettre aux tutelles (ministère de la Culture + ministère de l’Économie).
+                <br><a>&#8597;</a><span><h3>Nous faisons part de nous inquiétudes quant à la vacance du poste de direction.</h3></span>
+            </h2>
+        </div>  
+
+            
+                
+        <div class="text">
+            <h1>16/05</h1>
+            <h2>
+                &#8618;Suite à notre lettre aux tutelles, Sylviane Tarsot-Gillery, directrice générale de la direction générale à la création artistique (DGCA), dépendant du ministère de la Culture, vient nous rencontrer.
+                <br><a>&#8597;</a><span><h3>
+                Elle nous assure que les procédures de recrutement sont en cours et qu’une direction sera nommée d’ici la rentrée. Elle nous demande de définir les critères importants du profil idéal du directeur ou de la directrice selon les élèves.</h3></span>
+            </h2>
+        </div>  
+
+                
+        <div class="text">
+            <h1>03/07</h1>
+            <h2>
+                &#8618;Suite à la pré-sélection par les tutelles, 3 candidat·e·s parmi les 11 postulant·e·s sont présenté·e·s aux membres du conseil d’administration.
+                <br><a>&#8597;</a><span><h3>
+                - Jeanne Gailhoustet : Directrice de l’Ecole Nationale Supérieure d’Art de Limoges-Aubusson<br>
+                - Emmanuel Mahé : Directeur de la Recherche à l’Ecole Nationale Supérieure des Arts Décoratifs<br>
+                - Rémy Fenzy : Ancien directeur de l’Ecole Nationale Supérieure de Photographie d’Arles<br><br>
+
+                Les élèves élu·e·s aux différents conseils de l’école partagent les dossiers de candidature et organisent des entretiens en visio-conférence avec chacun·e d’entre eux, ouvert à tous et toutes les élèves. Une vingtaine d’élèves assistent à chaque entretien.<br>
+
+                Les élèves plébiscitent M. Mahé et M<sup>me</sup> Gailhoustet. Le personnel est en accord avec les élèves. Les deux candidats semblent s’être bien renseignés sur l’ENSCI et portent un projet et une vision pour l’école dans lesquels les élèves se retrouvent.<br>
+
+                Suite à ces débats, la découverte d’une lettre ouverte écrite par les étudiants de l’Ecole de Photographie d’Arles renforce notre positionnement. La lettre dénonce un manque de transparence dans les prises de décision et une mauvaise gestion des relations humaines.</h3></span>
+            </h2>
+        </div>  
+
+                
+        <div class="text">   
+            <h1>05/07</h1>
+            <h2>
+                &#8618;Le conseil d’administration a lieu.
+                <br><a>&#8597;</a><span><h3>Sont présent·e·s les représentant·e·s des tutelles (Culture et Économie), des membres du personnel, des élèves et également des professionnel·le·s du design.
+                <br>Après présentation des trois candidatures, discussions et débats, les élèves élu·e·s lisent un texte qui résume les débats avec les élèves et leur position : <br>
+                Deux votes pour pour les candidatures de M<sup>me</sup> Gailhoustet et M. Mahé, la note d’intention de M. Fenzy étant considéré comme « une accumulation de mesures généralistes, souvent déjà existantes à l’Ensci - permettant de croire qu’il ne s’est pas intéressé au modèle même de notre école. »<br>
+                Le représentant du Ministère de l'économie et des finances propose que les représentant·e·s des tutelles ne votent pas l’avis du CA, car ils ont déjà pré-sélectionné ces trois candidatures. Les représentant·e·s de la culture s’y opposent.<br>
+                Au cours des débats, qui vont largement vers un plébiscite de M<sup>me</sup> Gailhoustet et de M. Mahé, les représentant·e·s du ministère de la culture ne cessent de remettre la candidature de M. Fenzy sur la table.<br>
+                Les résultats du vote consultatif (13 personnes) sont :<br>
+                - 11 voix pour M<sup>me</sup> Gailhoustet<br>
+                - 7 voix pour M. Mahé<br>
+                - 4 voix pour M. Fenzy<br>
+                Le représentant de l’économie et des finances s’abstient de voter.<br>
+                Les 4 voix pour M. Fenzy sont celles de 3 représentant·e·s du ministère de la culture et d’un des représentants des organisations professionnelles.<br>
+                Cet avis est remis aux tutelles. Ils seront décisionnaires, mais dans les faits, le ministère de la culture tranchera, et celui de l‘industrie se rangera à son avis.</h3></span>
+            </h2>
+        </div>  
+
+                
+        <div class="image">
+            <h1>25/07</h1>
+            <h2>
+                &#8618;Suite à des rumeurs concernant une éventuelle nomination de M. Fenzy, nous envoyons <a id="popup">une nouvelle lettre<span><img width="60%" height="auto" src="media/hibou.gif" alt="slogan"/></span></a> aux tutelles pour réaffirmer notre opposition à cette candidature. Celle-ci est aussi transférée aux membres du conseil d’administration.
+            </h2>
+        </div> 
+
+        <div class="text">
+            <h1>30/07</h1>
+            <h2>
+                &#8618;M. Mazoyer, ancien élève de l'école, représentant de l’Alliance France Design (AFD) et présent lors du conseil d’administration, adresse une lettre au Ministère pointant le désaveu du CA suite à sa consultation.
+                <br><a>&#8597;</a><span><h3>
+                Contrairement à la nomination de la précédente direction de l'école où l’orientation du CA avait été prise en compte, il semble qu’il n’ait actuellement plus la même écoute de la part des ministères. M. Mazoyer s’inquiète et questionne donc le réel poids du CA notamment dans des moments si importants. Il demande aux ministères des éclaircissements sur le rôle des administrateurs et émet une réserve sur la poursuite de son mandat au sein du CA. <br>
+				Au même moment, des candidat·e·s sont recherché·e·s pour la présidence du CA dont le poste est vacant depuis quelques temps. Une ancienne élève, pressentie, refuse la nomination en apprenant qu’elle risque fortement d’être conjointe à celle de M. Fenzy.
+				</h3></span>
+            </h2>
+        </div>    
+
+                
+        <div class="image">
+            <h1>06/08</h1>
+            <h2>
+                &#8618;M<sup>me</sup> Gisclard, également représentante de l’Alliance France Design, nous soutient à son tour, en envoyant une <a id="popup">lettre aux ministères<span><img width="60%" height="auto" src="media/lettre.gif" alt="slogan"/></span></a>, cette fois-ci au nom de l’AFD.
+            </h2>
+        </div> 
+
+                
+        <div class="image">
+            <h1>04/09</h1>
+            <h2>
+                &#8618;Entretien téléphonique entre Sylviane Tarsot-Gillery et les élèves élu·e·s pour obtenir des explications quant au choix du <a id="popup">ministère<span><img width="60%" height="auto" src="media/riester.jpg" alt="slogan" class="imageSpin2"/></span></a>.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                M<sup>me</sup> Tarsot-Gillery affirme que M. Fenzy avait su être plus convaincant au moment de son entretien lors du jury de la short-list et qu'il aurait repensé certaines de ses positions et ambitions pédagogiques après s’être entretenu entre autres avec le précédent directeur. Nous demandons alors qu’on nous fournisse des éléments convaincants.
+                </h3></span>
+            </h2>
+        </div> 
+                
+        <div class="text">
+            <h1>23/09</h1>
+            <h2>
+               &#8618;Suite à l'entretien téléphonique, une rencontre est organisée entre des représentants des étudiant·e·s, trois membres du personnel de l’ENSCI, M. Fenzy, M<sup>me</sup> Diakité Kaba, ancienne étudiante pressentie comme nouvelle présidente du CA, ainsi que deux représentants du ministère de la Culture.
+               <br><a>&#8597;</a><span><h3>
+               L’échange est respectueux et direct. Les étudiant·e·s interrogent M. Fenzy sur son projet et sa vision pour l’école. Cette discussion, bien que cordiale, n’est pas convaincante. M. Fenzy ne semble pas porter de vision pour l’ENSCI, il fait valoir une période d’observation et explique ne pas vouloir imposer de feuille de route pré-établie.<br> 
+			   En fin d’après-midi, une assemblée générale est organisée à l’ENSCI. La décision est prise de maintenir notre opposition à la nomination de M. Fenzy et de contester le processus de recrutement opaque mené par les ministères ainsi que l’absence de prise en compte de notre avis. Enfin, l’assemblée générale décide d’organiser une manifestation le lendemain après-midi devant les locaux de la Direction Générale de la Création Artistique.
+			   </h3></span>
+            </h2>
+        </div>  
+             
+                
+        <div class="image">
+            <h1>24/09</h1>
+            <h2>
+                &#8618;Après une <a id="popup">matinée de préparation<span><img width="60%" height="auto" src="media/prep.jpg" alt="slogan" /></span></a>, les étudiant·e·s vont <a id="popup">manifester<span><img width="60%" height="auto" src="media/banderole.jpg" alt="slogan"/></span></a> devant la DGCA. Nous protestons contre la nomination d’un <a id="popup">directeur sans vision<span><img width="60%" height="auto" src="media/colere.jpg" alt="slogan"/></span></a>, contre <a id="popup">l’opacité du processus<span><img width="60%" height="auto" src="media/slogan.jpg" alt="slogan"/></span></a> et contre le manque d’<a id="popup">écoute<span><img width="60%" height="auto" src="media/manif.jpg" alt="slogan"/></span></a> de nos positions.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                Une délégation de 6 élèves est reçue dans l’après-midi par M<sup>me</sup> Tarsot-Gillery, M. Perrault, M<sup>me</sup> Chapus et M. Brunaux. Nous réitérons nos arguments et nos revendications en demandant l’écartement de la candidature de M. Fenzy au profit d’un·e des deux autres candidat·e·s. La DGCA argumente le choix par le ministre de M. Fenzy par la volonté de proposer un deuxième mandat à Limoges pour M<sup>me</sup> Gailhoustet et par le fait que M. Mahé n’ait jamais dirigé d’école nationale supérieure auparavant. M. Fenzy a selon eux plutôt bien réussi dans sa direction précédente. Il nous est également précisé qu’il est actuellement libre et souhaite comme eux être nommé à la tête d’une école. Pour nous, il semble donc être un choix par défaut, et non décidé en fonction du projet porté pour l’ENSCI.<br>
+				À la fin de la rencontre, nous obtenons de la DGCA qu’elle transmette nos revendications aux ministres. Elle s’engage alors à les contacter dans l’après-midi et annonce revenir vers nous avant la fin de la semaine.
+				</h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>26/09</h1>
+            <h2>
+               &#8618;Nous envoyons des lettres d’invitation aux ministres leur demandant de venir nous rencontrer afin de faire valoir nos arguments et leur faire découvrir l’école, ainsi qu’à M. Jack Lang pour demander son soutien.
+            </h2>
+        </div>    
+                
+        <div class="image">
+            <h1>26/09 > 17/10</h1>
+            <h2>
+                &#8618;Sans nouvelles de la DGCA et des tutelles, nous passons plusieurs appels téléphoniques qui resteront <a id="popup">sans réponse<span><img width="60%" height="auto" src="media/vent.gif" alt="slogan"/></span></a>.
+            </h2>
+        </div>
+
+        <div class="image">
+            <h1>17/10</h1>
+            <h2>
+               &#8618;Nous recevons un mail du ministre de l’Industrie et de l’Économie précisant qu’il n’a pas le temps de venir nous rencontrer. Il <a id="popup">réaffirme<span><img width="60%" height="auto" src="media/deso.png" alt="slogan" style="filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));"/></span></a> que le dossier relève des attributions du ministre de la Culture.
+            </h2>
+        </div> 
+
+                
+        <div class="image">
+            <h1>21/10</h1>
+            <h2>
+               &#8618;Nous recevons un <a id="popup">mail<span><img width="100%" height="auto" src="media/incendiaire.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> de la part du ministère de la Culture nous annonçant la nomination imminente de M. Fenzy.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                Une assemblée générale est immédiatement organisée. La décision est prise de maintenir notre opposition à la nomination de M. Fenzy ainsi qu'au processus trouble et sans concertation du ministère. Les étudiant·e·s décident de mettre en place une semaine de mobilisation à partir de début novembre pour protester et empêcher l’arrivée de M. Fenzy.
+                   </h3></span>
+            </h2>
+        </div> 
+
+        <div class="text">
+            <h1>22/10 > 31/10</h1>
+            <h2>
+               &#8618;Un petit groupe d’élèves planifie et organise un programme pour la mobilisation. En même temps, ils et elles essaient de joindre M. Fenzy pour le prévenir des événements à venir dans un soucis de transparence.
+            </h2>
+        </div>  
+                
+                
+        <div class="image">
+            <h1>02/11 > 03/11</h1>
+            <h2>
+               &#8618;<a id="popup">Un mur<span><img width="60%" height="auto" src="media/Construction.gif" alt="slogan"/></span></a> d’une centaine de parpaings est construit à l’entrée de la cour pour symboliser notre opposition à l’arrivée d’un nouveau directeur. Le mur respecte les normes de sécurité incendie et permet le passage.<br>&#8618;Le bureau de la direction est condamné avec deux planches sur lesquelles est inscrit : <!--« Maintenant, vous êtes au pied du mur. »-->
+            </h2>
+
+        </div>
+
+       <img src="media/pieddumur.gif" style="width: 200px; margin-left: 50%; transform: translateX(-100px);">
+
+	        <br><br>
+
+        <div class="image">
+            <h1>04/11 > 08/11</h1>
+            <h2>&#8618;Afin de réfléchir ensemble aux événements qui ont mené à la situation actuelle, nous nous mobilisons toute la semaine sous la forme de <a id="popup">conférences<span><img width="60%" height="auto" src="media/conf.jpg" alt="slogan""></span></a>, d’<a id="popup">ateliers<span><img width="60%" height="auto" src="media/preparationdebat.jpg" alt="slogan"></span></a> et d’<a id="popup">agoras<span><img width="60%" height="auto" src="media/agoras.jpg" alt="slogan"></span></a>. Les réflexions menées et alimentées par les interventions nous laissent ainsi la possibilité de ré-interroger et d'affirmer notre positionnement collectivement.</h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+            <h2>
+                <a>&#8597;</a><span><h3>
+                Au cours de la semaine, les vitrines de l’école seront utilisées comme support de communication à l’aide de blanc de meudon.<br>Chaque soir, une assemblée générale ouverte à tous et à toutes permet de décider de la suite de la semaine.<br>Le mur se transforme en support de débat pour construire un projet et des propositions pour l’ENSCI. Un système de propositions et de vote est mis en place pour faire remonter les revendications internes les plus pertinentes et les plus soutenues.
+                   </h3></span>
+            </h2>
+        </div> 
+
+
+        <div class="image">
+            <h1>06/11</h1>
+            <h2>&#8618;M. Fenzy <a id="popup">appelle<span><img width="60%" height="auto" src="media/phone.gif" alt="slogan""></span></a> M<sup>me</sup> Nouguier, secrétaire générale et directrice par intérim, et lui indique être en train d'établir un nouveau projet pour l'école, avec M<sup>me</sup> Diakité Kaba. Il affirme n'avoir jamais été contacté par les élèves et ne parle pas du blocage en cours.<br>&#8618;Les élèves se réunissent en assemblée générale. La décision est prise de maintenir notre opposition à la venue de M. Fenzy.</h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+            <h2>
+                <a>&#8597;</a><span><h3>
+                Il est décidé de ne pas dialoguer avec lui et de continuer à échanger avec nos tutelles pour obtenir la prise en compte de l'avis du conseil d'administration du 05/07/2019.
+               </h3></span>
+            </h2>
+        </div>
+
+
+        <div class="image">
+            
+            <h1>09/11 > 10/11</h1>
+            <h2>
+                &#8618;Suite aux messages de soutien de nombreuses personnes extérieures à l’école, nous préparons un dossier pour le <a id="popup">diffuser<span><img width="60%" height="auto" src="media/dossier.jpeg" alt="slogan"/></span></a> le plus largement possible afin de médiatiser notre mobilisation et ses enjeux.
+            </h2>
+        </div>  
+        
+        <div class="text">
+            <h1>12/11</h1>
+            <h2>
+                &#8618;Nous envoyons des mails à M. Fenzy et au ministère de la Culture pour les informer à nouveau de nos revendications.<br><a>&#8597;</a><span><h3>
+                - La prise en compte de l’avis du CA du 5 juillet<br>
+                - et notre refus de considérer M. Fenzy comme un interlocuteur.</h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>14/11</h1>
+            <h2>
+                &#8618;M<sup>me</sup> Tarsot-Gillery, directrice générale de la DGCA, demande de recevoir une délégation lundi suivant, le 18 novembre, à 18:00.
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>15/11</h1>
+            <h2>&#8618;Nous recevons un communiqué de la part des étudiant·e·s et du personnel de l'ENSP Arles en soutien à la mobilisation à l'ENSCI.<br id="historique3"><a>&#8597;</a><span><h3>On peut y lire que « le bilan de Rémy Fenzy à l'ENSP Arles est un échec, n'ayant su donner ni contrat de performance ni objectif pédagogique tout au long de ses mandats. »</h3></span>
+            &#8618;Nous prenons connaissance de la nomination par arrêté du ministère de la Culture de Rémy Fenzy comme directeur de l’ENSCI à compter de mercredi 13 novembre.<br>
+            &#8618;Nous organisons une agora au cours de laquelle nous votons, à l’unanimité, un blocage total de l’école.<br><a>&#8597;</a><span><h3>Concrètement, cela signifie :<br>
+            - De bloquer l'entrée de l'établissement au personnel de l'école lundi 18 novembre.  Le blocage a pour but de créer une <i>nuisance</i> suffisante pour faire réagir les ministères. Bloquer tou·te·s les membres du personnel sans distinction leur permet, par ailleurs, d'éviter de prendre position.<br>
+            - De poser un lapin à la DGCA pour le rendez-vous du lundi 18 novembre. L'objet de la réunion est de préparer « l’arrivée de la nouvelle équipe de direction de l’ENSCI » ; s’y rendre revient à accepter l'arrivée de M. Fenzy. </h3></span>
+            </h2>
+        </div>
+
+
+       <div class="image">
+            
+            <h1>17/11</h1>
+            <h2>
+                &#8618;Nous nous réunissons pour formaliser et organiser le <a id="popup">blocage<span><img width="60%" height="auto" src="media/blocage.jpg" alt="slogan"/></span></a>.
+            </h2>
+        </div>
+
+        <div class="image">
+            
+            <h1>18/11</h1>
+            <h2>
+                &#8618;Dès 6 heures du matin, nous débutons le <a id="popup">blocage<span><img width="60%" height="auto" src="media/blocage2.jpeg" alt="slogan"/></span></a> de l’école. Le mouvement durera jusqu’à ce qu’on nous propose une réelle alternative à M.Fenzy.<br>
+                &#8618;La DGCA nous convie à 17:30 à une réunion avec une représentante du cabinet du ministre.<br>
+                &#8618;Nous y allons avec deux grandes <a id="popup">banderoles<span><img width="60%" height="auto" src="media/bande.jpeg" alt="slogan"/></span></a> « CA ignoré, ENSCI bloquée », élèves et personnel réuni·e·s.<br>
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+            <h2>
+                &#8618;Une délégation de 4 représentant·e·s d’élèves et 4 représentant·e·s du personnel sont reçu·e·s. On nous propose toujours d’accueillir M. Fenzy à l’école pour un débat.<br><a>&#8597;</a><span><h3>Nos interlocuteurs et interlocutrices maintiennent qu'aucun retour en arrière de la part du ministère quant à la nomination de M. Fenzy n'est possible. Ils nous est proposé d'entamer un dialogue avec M. Fenzy et M<sup>me</sup> Diakité Kaba pour débloquer la situation. Malgré leur pertinence, nos critiques du mode de nomination sont encore balayées d'un revers de main étant donné le fait que le processus n'est pas amené à changer dans l'immédiat.</h3></span>
+            </h2>
+        </div> 
+
+        <div class="image">
+
+            <h1>19/11</h1>
+            <h2>
+                &#8618;La conclusion de l’échange n’est toujours <a id="popup">pas convaincante<span><img width="60%" height="auto" src="media/maintien.jpg" alt="slogan"/></span></a>, nous maintenons le blocage.
+        <div class="text">
+            <a>&#8597;</a><span><h3>Le maintien du blocage est renouvelable tous les jours suivant l'avis de l'agora.</h3></span>
+            </h2>
+        </div> 
+        <div class="text" style="margin-top: -0.8em;">
+            <h2>
+                &#8618;M<sup>me</sup> Diakité Kaba se rend à l’ENSCI à 18:30 pour avoir un aperçu du blocage et des grandes lignes de notre revendication .
+                <br><a>&#8597;</a><span><h3>Nous nous excusons de l’accueillir sur le pas de la porte et lui rappelons que l’école est en blocage et que nous ne sommes pas prêts à la recevoir.<br>
+                Elle repart toutefois avec le dossier de nos revendications qu'elle promet de lire. Nous lui rappelons avant son départ que&nbsp;:<br>
+                - nous attendons d’elle de faire remonter au ministère notre position et notre détermination  ;<br>
+                - la fin du mouvement n’aura lieu qu’au retrait de la nomination de M. Fenzy  ou à sa démission et<br>
+                - le blocage privera sans doute l’école de la restitution des ateliers de projets aux partenaires industriels .</h3></span>
+            </h2>
+        </div> 
+
+
+        <div class="text">
+            <h1>20/11</h1>
+            <h2>
+                &#8618;M. Fenzy se rend à l'ENSCI à 9:30 mais ne parvient pas à passer le sas en raison du blocage.
+                <br><a>&#8597;</a><span><h3>Nous réitérons brièvement notre double-dénonciation et nos arguments. Le personnel l'écoute, devant l'école, durant une vingtaine de minutes.</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -0.8em;">
+            <h2>
+                &#8618;Nous le <a id="popup">recontactons<span><img width="100%" height="auto" src="media/invitfenzy.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> pour poser les conditions du dialogue. Il est attendu à l'école à 16:00.
+ 
+            </h2>
+        </div> 
+        <div class="text" style="margin-top: -0.8em;">
+            <h2>
+                &#8618;Entretemps, des groupes de travail préparent la forme et les règles de l'accueil de M. Fenzy ainsi que les questions à lui poser. Les propositions sont adoptées collectivement lors d'une agora. 
+                <br><a>&#8597;</a><span><h3>Les questions que nous préparons pour M. Fenzy :<br>
+                Quelles sont les enjeux du design aujourd'hui selon vous ?<br>
+                Qu´est ce qui fait la singularité de l’ENSCI à vos yeux ?<br>
+                Quelle vision de l’ENSCI pour demain ?<br>
+                Selon vous, quel type de partenariat pourrait enrichir l’école ?<br>
+                Quelle est votre vision de l’ENSCI à l’international ?<br>
+                Quelles sont vos motivations concrètes à être directeur de l’ENSCI ?<br>
+                Au vu de la situation actuelle, comment imagineriez-vous diriger l’école sans avoir l'approbation des élèves et du personnel ? (surtout dans cette logique d’accordance avec les équipes)</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -0.8em;">
+            <h2>
+                &#8618;Lors de la <a id="popup">réunion<span><img width="60%" height="auto" src="media/reunion.jpg" alt="slogan" /></span></a> avec M. Fenzy, nous écoutons silencieusement ses arguments et motivations, et posons uniquement les questions approuvées collectivement.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+            <h2><a>&#8597;</a><span><h3>Il apporte peu de nouveaux éléments par rapport à sa candidature initiale, que ce soit dans sa présentation générale ou dans ses réponses aux questions. Le projet reste léger et peu convaincant à nos yeux, élèves comme personnel.<br>
+            Il concède toutefois qu'il ne souhaite pas « forcer le destin » et qu'il est prêt à retirer sa candidature s'il ne réussit pas à nous convaincre.</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -0.8em;">
+            <h2>&#8618;Suite au debrief de cette réunion, nous lui annonçons qu'il n'a pas réussi à nous convaincre. M. Fenzy <a id="popup">retire<span><img width="60%" height="auto" src="media/fire.gif" alt="slogan" /></span></a> officiellement sa candidature ; le ministère l’accepte.    
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -0.8em;">
+            <h2>
+                &#8618;M<sup>me</sup> Diakité Kaba nous envoie un mail intitulé <a id="popup"><i>Épilogue</i><span><img width="100%" height="auto" src="media/saranpilogue.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> pour nous inviter à débloquer l'école.
+            </h2>
+        </div> 
+
+
+        <div class="image">
+            
+            <h1>21/11</h1>
+            <h2>
+                &#8618;Une agora se tient à 9:30 en vue d’un <a id="popup">déblocage<span><img width="60%" height="auto" src="media/deblocage.gif" alt="slogan"/></span></a> progressif de l’école et de la poursuite de la mobilisation et de la vigileance.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+            <h2><a>&#8597;</a><span><h3>La nomination arbitraire de M. Fenzy était un premier enjeu. Elle révèle cependant un problème de fond dans le processus de nomination d'une direction par les ministères ainsi que la volonté d’une meilleure implication des élèves et du personnel dans le modèle de gouvernance de notre école.<br> Nous décidons de profiter de cet élan commun pour entamer une nouvelle phase de construction autour de ces enjeux.</h3></span>
+            </h2>
+        </div>
+
+        
+
+
+        <br><br><br>
+    </div>    
+
+    <div id="suitehistorique">
+
+		<div id="degradejaune"><br><br><br><br><br><br><!--<h4>scroll encore un peu</h4>--></div>
+
+	</div>
+</section>    
+
+
+	<script type="text/javascript" src="mur.js"></script>
+
+	
+</body>

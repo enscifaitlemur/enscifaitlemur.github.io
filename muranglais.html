@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <title>"Semaine blockade"</title>
+	    <link rel="shortcut icon" href="media/brick.ico" type="image/x-icon" />
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400&display=swap" rel="stylesheet">
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+	</head>
+
+<body>
+
+
+	<video id="video" muted><source src="media/fond.mov" type="video/mp4"></video>
+
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section class="demo">
+
+					<div class="spacer s2"></div>
+					<div class="spacer s0" id="trigger"></div>
+					<div id="imagesequence">
+						<img id="myimg" src="media/anim1.png"><br>
+					</div>
+					<div class="spacer s2"></div>
+
+				</section>
+				<div class="spacer s_viewport"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="paint">
+  		<canvas id="myCanvas"></canvas>
+	</div>
+
+	<section class="warning">
+		<p>Widen your browser, make it more comfortable.</p>
+	</section>
+
+
+    <!--<div id="titre">
+        <img width="25%" height="auto" src="media/titre.gif" alt="slogan"/>
+    </div>-->
+
+    <!--J'ai rajouté ça, mais le titre est voué à changer encore askip:-->
+    <div id="titre">
+        <h5>ENSCI</h5>
+    </div>
+    <div id="soustitre">
+        <img width="50%" height="auto" src="media/faitlemur2.gif"/>
+    </div>
+
+    <div id="langue"> 
+        <a class="switch" id="francais" href="mur.html">fr</a>&nbsp;/&nbsp;<a class="switch">en</a>
+    </div> 
+
+
+<!--ya ce truc là qui sert à rien:-->
+    <img width="25%" height="auto"/>
+<!--mais quand on l'enlève ça décalle le canvas je sais pas pk-->
+
+	<div id="historique">
+		<div class="text">
+            <h2>
+                <br><br><br><br><br><br><br><br><br><br><br><br>The students of ENSCI-les ateliers in Paris are rallied for <strike>days</strike> weeks against the arbitrary nomination of the head of school by the Minister of Culture. Here is the journal of this rallying cry.
+            </h2>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="text">
+            <h4>
+                little recap' of the events.
+            </h4>
+        </div>
+
+		<div class="image">
+
+            <h1>02/13</h1>
+            <h2>
+                &#8618;<a id="popup">Yann Fabès<span><img width="30%" height="auto" src="media/yannfabes.jpg" alt="slogan" class="imageSpin" /></span></a> quits after disagreement with the ministry of culture regarding his pay.
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>02/19</h1>
+            <h2>
+                &#8618;We, students of ENSCI, write a letter to our guardianship agency (ministry of Culture and Economics).
+                <br><a>&#8597;</a><span><h3>We share our concerns towards the vacancy of the management position.</h3></span>
+            </h2>
+        </div>
+
+
+
+        <div class="text">
+            <h1>05/16</h1>
+            <h2>
+                &#8618;Following our letters to the guardianship agency, Sylviane Tarsot-Gillery, general-manager of the general office for artistic creation (DGCA), under the ministry of Culture, comes to meet us.
+                <br><a>&#8597;</a><span><h3>
+                She assures that the recrutement procedures are ongoing, and that a new management team would be nominated before the new semester. She asks us to define the important criterias for the ideal head of school, according to students.</h3></span>
+            </h2>
+        </div>
+
+
+        <div class="text">
+            <h1>007/03</h1>
+            <h2>
+                &#8618;Following the pré-selection by the guardianship agency, 3 candidates among the 11 applicants are presented to the members of the executive board.
+                <br><a>&#8597;</a><span><h3>
+                - Jeanne Gailhoustet : Head of the Ecole Nationale Supérieure d’Art of Limoges-Aubusson<br>
+                - Emmanuel Mahé : Research director at the Ecole Nationale Supérieure des Arts Décoratifs<br>
+                - Rémy Fenzy : Former head of the Ecole Nationale Supérieure de Photographie of Arles<br><br>
+
+                The student representatives of the various school comitees share the three applications and organise video interviews with each candidate, open to all students. Around twenty students participate in these interviews.<br>
+
+                The students endorse M.Mahé and M<sup>rs.</sup> Gailhoustet. The school staff is in agreement with the students. The two candidates seem well informed about ENSCI, and carry a real project and ambition for the school, in which the students can find themselves.<br>
+
+                Following these debates, the discovery of an open letter written by the students of the Ecole de Photographie of Arles strengthens our position. The letter denounces a lack of transparency in the decision making process and a poor management of human relations.</h3></span>
+            </h2>
+        </div>
+
+
+        <div class="text">
+            <h1>07/05</h1>
+            <h2>
+                &#8618;The Executive Board meeting takes place.
+                <br><a>&#8597;</a><span><h3>Are presente: the guardianship agency representatives (Culture and Economics), staff members, students, and design professionals.
+                <br>After presenting the three candidates, discussions and debates, the student representatives read a text to summarise the debates among the student body and their position:<br>
+                Two votes for the nomination of M<sup>rs.</sup> Gailhoustet and M. Mahé, the note of intent of M. Fenzy being consideres as « an accumulation of generalist mesures, often already existing at ENSCU - leading to believe that he did not take interest in the singular model of our school. »<br>
+                The Ministry of Economics representative suggests that the guardianship agency representatives do not vote of the candidates, as they have already selected the three candidates. The Ministry of Culture representatives oppose this proposal.<br>
+                During the debates, that largely endorse M<sup>rs</sup> Gailhoustet and M. Mahé, the Ministry of Culture representatives keep expressing their interest in M. Fenzy's application.<br>
+                The results of this advisory vote (13 people) are as follows :<br>
+                - 11 votes for M<sup>rs</sup> Gailhoustet<br>
+                - 7 votes for M. Mahé<br>
+                - 4 voix for M. Fenzy<br>
+                The Ministry of Economics representatives abstain from voting.<br>
+                The 4 votes for M. Fenzy are from the three Ministry of Culture representatives and from one professional organisation representative.<br>
+                This advise is given to the guardianship agencies. They hold the decision-making power, but in reality only the Ministry of Culture will decide, and that of the Ministry of Economics will stand with that decision.</h3></span>
+            </h2>
+        </div>
+
+
+        <div class="image">
+            <h1>07/25</h1>
+            <h2>
+                &#8618;Following rumors of a potential nomination of M. Fenzy, we send <a id="popup">a new letter<span><img width="100%" height="auto" src="media/hibou.gif" alt="slogan"/></span></a> to the guardianship agencies to reaffirm our opposition to this application. This letter is also forwarded to the executive board.
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>07/30</h1>
+            <h2>
+                &#8618;M. Mazoyer, a school alumni, representing the France Design Alliance (AFD) and present at the board of the executive board meeting, sends a letter to the Minitry pointing to disavowal of the executive board following its consultaion.
+                <br><a>&#8597;</a><span><h3>
+                Contrary to the nomination of the previous school direction, where the executive board advice had been followed, it seems the minitries no longer have the same willingness to listen. M. Mazoyer worries about the real importance given to the executive board especially in this type of critical decision. He asks the ministries for clarifications, and expresses reservations as to the continuation of hsi tenure on the executive board.<br>
+				At the same time, candidates are sought for the presicency of the executive board, a position vacant for a while. A school alumni, nominated, turns down the offer after learning her tenure will certainly be combined with that of M. Fenzy.
+				</h3></span>
+            </h2>
+        </div>
+
+
+        <div class="image">
+            <h1>08/06</h1>
+            <h2>
+                &#8618;M<sup>rs</sup> Gisclard, a France Design Alliance representative as well, in turn expresses her support, sending a <a id="popup">letter to the ministries<span><img width="100%" height="auto" src="media/lettre.gif" alt="slogan"/></span></a>, this time in the name of the France Design Alliance (AFD).
+            </h2>
+        </div>
+
+
+        <div class="image">
+            <h1>09/04</h1>
+            <h2>
+                &#8618;Telephone conversation between Sylviane Tarsot-Gillery and the student representatives to obtain explanations regarding the decision of the <a id="popup">ministries<span><img width="20%" height="auto" src="media/riester.jpg" alt="slogan" class="imageSpin2"/></span></a>.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                M<sup>rs</sup> Tarsot-Gillery asserts that M. Fenzy was the most convincing during his interview at the short-listing jury, and that he had revisited some of this positions and educational ambitions after having met with, inter alia, the previous director. We therefore ask for convincing supporting evidence.
+                </h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>09/23</h1>
+            <h2>
+               &#8618;Following the telephone conversation, a meeting is organised between student representatives, three members of the school staff, M. Fenzy, M<sup>rs</sup> Diakité, a school alumni nominated for the role of executive board president, and two representatives of the ministry of Culture.
+               <br><a>&#8597;</a><span><h3>
+               The exchange is respectful and direct. The students inquire M. Fenzy about his project and ambition for the school. This decision, while cordial, is not convincing. M. Fenzy does not seem to be carrying a vision for ENSCI, he emphasizes the need for an observation period, and explains not wanting to impose an already-established roadmap.<br>
+			   In late afternoon, a general assmbly is organized at ENSCI. The decision is taken to maintain our opposition to the nomination of M. Fenzy, and to contest the opaque hiring process conducted by the ministries and the failure to take into account our opinion. Finally, the general assembly decides to organise a protest the next day in front of the General Office for Artistic Creation (DGCA).
+			   </h3></span>
+            </h2>
+        </div>
+
+
+        <div class="image">
+            <h1>09/24</h1>
+            <h2>
+                &#8618;After a <a id="popup">morning of preparation<span><img width="50%" height="auto" src="media/prep.jpg" alt="slogan" /></span></a>, the students go <a id="popup">protest<span><img width="40%" height="auto" src="media/banderole.jpg" alt="slogan"/></span></a> in front of the DGCA. We protest against the nomination of a <a id="popup">director without vision<span><img width="50%" height="auto" src="media/colere.jpg" alt="slogan"/></span></a>, against <a id="popup">the opacity of the process<span><img width="40%" height="auto" src="media/slogan.jpg" alt="slogan"/></span></a> and against the lack of <a id="popup">attention<span><img width="40%" height="auto" src="media/manif.jpg" alt="slogan"/></span></a> to our position.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                A 6 students delegation is received in the afternoon by M<sup>rs</sup> Tarsot-Gillery, M. Perrault, M<sup>rs</sup> Chapus et M. Brunaux. We reiterate our arguments and our claims by asking for M. Fenzy's application to be disregarded for the benefit of one of the two other candidates. The DGCA argues in support of M. Fenzy by the willingness to propose a second term mandate at Limoges for M<sup>rs</sup> Gailhoustet and by the fact that M. Mahé never directed a National School before. In their opinion, M. Fenzy was rather successful in his previous position at Arles. We are also being informed that he is currently available, and wishes to head a school. For us, he therefore seems to be the default choice, not one decided according to the ambition carried to ENSCI.<br>
+				At the end of this meeting, we get the DGCA to agree to transfer our grievances to the ministers. The DGCA commits to contact them in the afternoon, and to come back to us by the end of the week.
+				</h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>09/26</h1>
+            <h2>
+               &#8618;We send out invitations to the ministers to come meet us to hear out our arguments, and to discover our school, as well as M. Jack Lang (minister of culture from 1988 to 1993, and originator of our school) to ask for his support.
+            </h2>
+        </div>
+
+        <div class="image">
+            <h1>09/26 > 10/17</h1>
+            <h2>
+                &#8618;Without news from the DGCA and the other guardianship agencies, we try make several phone calls that will remain <a id="popup">unanswered<span><img width="50%" height="auto" src="media/vent.gif" alt="slogan"/></span></a>.
+            </h2>
+        </div>
+
+        <div class="image">
+            <h1>10/17</h1>
+            <h2>
+               &#8618;We receive an e-mail from the minister of Industry and Economics stating that he does not have time to come meet us. He <a id="popup">reaffirms<span><img width="50%" height="auto" src="media/deso.png" alt="slogan" style="filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));"/></span></a> that this case remains within the remits of the minister of Culture.
+            </h2>
+        </div>
+
+
+        <div class="image">
+            <h1>10/21</h1>
+            <h2>
+               &#8618;We receive an <a id="popup">e-mail<span><img width="100%" height="auto" src="media/incendiaire.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> from the ministry of Culture announcing the arrival of M. Fenzy as head of school.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+        	<h2>
+                <a>&#8597;</a><span><h3>
+                A general assembly is immidiately held. The decision is made to maintain our opposition to the nomination of M. Fenzy, as well as against the opaque and unilateral procedure of the ministry. The students decide to implement a week of mobilization starting in November to oppose and prevent the arrival of M. Fenzy.
+                   </h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>10/22 > 10/31</h1>
+            <h2>
+               &#8618;A small group of students plan and organise a program for this mobilization. At the same time, they try to get into contact with M. Fenzy to warn him abou the events that are going to take place for the sake of transparency.
+            </h2>
+        </div>
+
+
+        <div class="image">
+            <h1>11/02 > 11/03</h1>
+            <h2>
+               &#8618;<a id="popup">A wall<span><img width="50%" height="auto" src="media/Construction.gif" alt="slogan"/></span></a> made of about a hundred cinder blocks, is built to symbolise our opposition to this new principal. The wall respects fire safety regulations, and is non-constraining. <br>&#8618;The office of the head of school is condemned with two floorboards on which it is written : <!--« Maintenant, vous êtes au pied du mur. »-->
+            </h2>
+
+        </div>
+
+       <img src="media/pieddumur.gif" style="width: 200px; margin-left: 50%; transform: translateX(-100px);">
+
+	        <br><br><br>
+
+    </div>
+
+    <div id="suitehistorique">
+
+		<div id="degradejaune"><br><br><br><br><br><br><!--<h4>scroll encore un peu</h4>--></div>
+		<div id="long"></div>
+
+	</div>
+
+
+
+	<div id="frise"><i style="vertical-align: .07em;">&#9814;</i> <span>Week of the 4th to the 8th of November</span> <i style="vertical-align: .07em;">&#9814;</i></div>
+
+
+	<div id="brique">
+				<img width="100%" height="auto" src="media/paintparpaing.png"/>
+		</div>
+
+		<div id="note1" class="image">
+			<h1>04/11 > 08/11</h1>
+			<h2>&#8618;In order to discuss together the events that led to the current situation, we organize our mobilization all week in the form of<a id="popup">conferences<span><img width="60%" height="auto" src="media/conf.jpg" alt="slogan""></span></a>, d’<a id="popup">workshops<span><img width="60%" height="auto" src="media/preparationdebat.jpg" alt="slogan"></span></a> and<a id="popup">agoras<span><img width="60%" height="auto" src="media/agoras.jpg" alt="slogan"></span></a>. The reflections conducted and nourished by the interventions give us the opportunity to re-interrogate and affirm our collective positioning.<br><br></h2>
+		</div>
+
+
+		<div id="jour0">
+				<!--<div id="soustitreactu">
+						<img width="100%" height="auto" src="media/fondations.png"/>
+				</div>-->
+				<h6>04/11</h6>
+				<img width="100%" height="auto" src="media/meudon.jpeg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Throughout the week, the school's front windows will serve as a communication medium, by using whiting.<br>Every evening, a general assembly open to all, allows us to make decisions on the rest of the week.
+								</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour1">
+				<img width="100%" height="auto" src="media/bouchain.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2><br>
+								Former and new students absorb themselves into the school's archives in order to share and assimilate them.<br>We welcome Patrick Bouchain and Tony Côme for a discussion about the foundations of the school.
+								</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour2">
+				<!--<div id="soustitreactu">
+						<img width="100%" height="auto" src="media/structures.png"/>
+				</div>-->
+				<h6>05/11</h6>
+				<img width="100%" height="auto" src="media/battle.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>A <i>Leadership Battle</i> is initiated.<br>
+						Two teams composed of students and staff members build a utopian project for the school and challenge each other in a debate.<br>
+						This exercise generates concrete propositions for the organization of the school, leaving more space for self-management and decision-making by the students.
+								</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour3">
+				<img width="100%" height="auto" src="media/anciens.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Alumni, some of whom participated in the Jaunisse (a movement that took place in 2014 at ENSCI) come share their experience, the reasons, failures and successes of their mobilization.
+								</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="note2" class="image">
+			<h1>06/11 in the morning</h1>
+				<h2>&#8618;Mr. Fenzy <a id="popup">calls<span><img width="60%" height="auto" src="media/phone.gif" alt="slogan""></span></a> Ms. Nouguier, general secretary and interim director, informing him that he is working on a new project for the school, with Ms. Diakité Kaba. He claims he has never been contacted by the students and does not mention the BLOCKING put in place. We are concerned about this double speech.
+								<br><br>
+						</h2>
+		</div>
+
+		<div id="jour4">
+				<h6>06/11</h6>
+				<img width="100%" height="auto" src="media/support.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Alexandre Midal's documentary <i>Politique Fiction</i> is shown in his presence.<br>The wall becomes a medium for debate to build a project and propositions for ENSCI. A system of propositions and votes is put into place to bring to light the internal demands that are the most relevant and the most supported.
+</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour5">
+				<img width="100%" height="auto" src="media/textilles.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>During the open house of the fifth floor, we discover new tools and collectively create a flag displaying the colors of our mobilization.</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="note3" class="image">
+						<h1>06/11 in the evening</h1>
+				<h2>&#8618;The students gather in a general assembly. The decision to maintain our <a id="popup">opposition<span><img width="40%" height="auto" src="media/non.png" alt="slogan""></span></a>  to Mr. Fenzy's arrival is reached. It is resolved not to engage in any dialogue with him and to continue communicating with our guardianship to ensure that the opinion of the board of directors of 05/07/2019 is taken into account.
+								<br><br>
+						</h2>
+		</div>
+
+		<div id="jour6">
+				<img width="100%" height="auto" src="media/camus.jpeg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Cécilia Houdart runs a writing workshop, giving us insightful advice on how to build our claim and our means of communication outwards.<br>  We explore the means of actions that we will put in place in the future, based on the experience of Antoine Camus, a former student, participant in the movement Extinction Rebellion. We will notably adopt the rules for the distribution of speech and for a collective decision-making that he proposes. Small specialized groups will work on the different propositions that will be debated and voted during the agoras.</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour7">
+				<h6>07/11</h6>
+				<img width="100%" height="auto" src="media/27region.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Two designers of the 27<sup>e</sup> Région come to speak to us about public policy design. Aurélien Fouillet talks about commitment, design and politics.
+
+</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour8">
+				<img width="100%" height="auto" src="media/gauthier.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Gauthier Roussilhe talks to us about design in a time of an ecological and economical crisis following the projection of his documentary <i>Ethics for Design</i>.</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour9">
+				<h6>08/11</h6>
+				<img width="100%" height="auto" src="media/graphiste.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Sébastien Marchal, activist in graphic design and former student of ENSCI, speaks about his work and the links between graphic design, image and politics.</h2>
+						</div>
+				</div>
+		</div>
+
+		<div id="jour10">
+				<img width="100%" height="auto" src="media/charrette.jpg"/>
+				<div id="backgroundtextactu">
+						<div id="textactu">
+								<h2>Radio Charette, a radio collection of students and alumni of ENSCI hosts an evening for the closure of the week to celebrate our mobilization.
+</h2>
+						</div>
+				</div>
+		</div>
+
+
+    <div id="historique2"><br><br><br><br><br><br><br><br><br><br><br><br>
+
+		<div class="image">
+
+            <h1>11/09 > 10/11</h1>
+            <h2>
+                &#8618;Following messages of support from many people outside the school, we compile a document to be <a id="popup">shared<span><img width="55%" height="auto" src="media/dossier.jpeg" alt="slogan"/></span></a> as widely as possible in view of promoting our campaign and its challenges.
+                <img id="fleche" src="media/fleche3.png">
+                <a href="https://drive.google.com/drive/folders/1fP9PtWY4LLHmdWh-r6Hd-bC-7AmjuSjS" target="_blank"><img src="media/dossierpresse.png" style="position: absolute; display:block; margin-left: -45%; margin-top: -10%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>11/12</h1>
+            <h2>
+                &#8618;We send emails to Mr. Fenzy and the Ministry of Culture to inform them again of our requests.<br><a>&#8597;</a><span><h3>
+                - The Board's opinion of July 5, 2019 should be taken into account<br>
+                - and our refusal to consider Mr. Fenzy as an interlocutor.</h3></span>
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>11/14</h1>
+            <h2>
+                &#8618;M<sup>rs</sup> Tarsot-Gillery, General Manager of the DGCA (Head Office of the Artistic Creation), asked to receive a delegation on Monday, November 18, at 18:00.
+            </h2>
+        </div>
+
+        <div class="text">
+            <h1>11/15</h1>
+            <h2>&#8618;We receive a press release from the students and staff of ENSP Arles (Ecole Nationale Supérieure de Photographie Arles) in support of the campaign at ENSCI.<br id="historique3"><a>&#8597;</a><span><h3>It states that "Rémy Fenzy's assessment at ENSP Arles is a failure, having been unsuccessful in giving either a performance contract or an educational objective throughout his mandates. »</h3></span>
+            &#8618;We are informed of the appointment by decree of the Ministry of Culture of Rémy Fenzy as Director of ENSCI as from Wednesday 13 November.<br>
+            &#8618;We organise an agora during which we unanimously vote to block the school completely.<br><a>&#8597;</a><span><h3>In concrete terms, this means :<br>
+            - To block the entrance of the building to school staff on Monday, November 18.  The purpose of blocking is to create sufficient <i>nuisance</i> to get the ministries to react. Blocking all staff members without distinction also allows them to avoid taking a position.<br>
+        	- To stand up against the meeting with DGCA on Monday, November 18. The purpose of the meeting being to prepare for the "arrival of the new ENSCI management team"; going there is like accepting Mr. Fenzy's arrival. </h3></span>
+			</h2>
+        </div>
+
+
+       <div class="image">
+
+            <h1>11/17</h1>
+            <h2>
+                &#8618;We meet to formalize and organize the <a id="popup">blockade<span><img width="55%" height="auto" src="media/blockade.jpg" alt="slogan"/></span></a>.
+            </h2>
+        </div>
+
+        <div class="image">
+
+            <h1>11/18</h1>
+            <h2>
+                &#8618;As early as 6 a.m., we start <a id="popup">blockade<span><img width="55%" height="auto" src="media/blockade2.jpeg" alt="slogan"/></span></a> of the school. The movement will continue until we are offered a real alternative to Mr. Fenzy.<br>
+                &#8618;The DGCA invites us now at 17:30 to a meeting which includes a representative of the Minister's office.<br>
+                &#8618;We go there with two big <a id="popup">banners<span><img width="60%" height="auto" src="media/bande.jpeg" alt="slogan"/></span></a> « Board advice ignored, ENSCI blockaded », students and staff united.<br>
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2>
+                &#8618;A delegation of 4 student representatives and 4 staff representatives are received. We are still encouraged to welcome Mr. Fenzy to the school for a debate.<br><a>&#8597;</a><span><h3>Despite their relevance, our criticisms of the appointment process are again dismissed at a glance, given that the process is not likely to change in the immediate future.</h3></span>
+            </h2>
+        </div>
+
+        <div class="image">
+
+        	<h1>11/19</h1>
+            <h2>
+                &#8618;The conclusion of the exchange is still <a id="popup">not convincing<span><img width="55%" height="auto" src="media/maintien.jpg" alt="slogan"/></span></a>, we maintain the blockade.
+		<div class="text">
+			<a>&#8597;</a><span><h3>The maintenance of the blockade is renewable every day following the opinion of the agora.</h3></span>
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2>
+                &#8618;M<sup>rs</sup> Diakité Kaba comes to ENSCI at 18:30 to get an overview of the blockage and the main lines of our protest.
+                <br><a>&#8597;</a><span><h3>We apologize for greeting her on the doorstep and remind her that the school is blocked and that we are not ready to receive her.<br>
+                However, she leaves with the documentation of our requests, which she promises to read. We remind her before her departure that :<br>
+            	- we expect her to report back to the ministry our position and determination ;<br>
+            	- the end of the movement will only take place upon the withdrawal of Mr. Fenzy's appointment or his resignation and<br>
+            	- the blockade will likely deprive the school of the delivery of project workshops to industrial partners.</h3></span>
+            	<a href="https://www.telerama.fr/scenes/les-eleves-dune-ecole-de-design-dressent-un-mur-de-parpaings-contre-leur-nouveau-directeur,n6522757.php" target="_blank"><img src="media/telerama.png" style="position: absolute; display:block; margin-left: 110%; margin-top: -35%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            	<a href="https://www.lequotidiendelart.com/articles/16525-bras-de-fer-%C3%A0-l-ensci.html" target="_blank"><img src="media/jda.png" style="position: absolute; display:block; margin-left: 110%; margin-top: -10%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            	<a href="https://next.liberation.fr/amphtml/arts/2019/11/20/les-etudiants-en-design-de-l-ensci-font-bloc-contre-leur-nouveau-directeur_1764530?fbclid=IwAR0i_aKG48XwCyLy4gBFaU3DD91ygGcJbFWYALRs1m1ZcrbbYOy213aPzNw" target="_blank"><img src="media/liberation.png" style="position: absolute; display:block; margin-left: 110%; margin-top: 15%; width: 15%; height: auto; filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));"></a>
+            </h2>
+        </div>
+
+
+        <div class="text">
+        	<h1>11/20</h1>
+            <h2>
+                &#8618;Mr. Fenzy arrives at ENSCI at 9:30 am but is unable to pass through the gate due to the blockage.
+                <br><a>&#8597;</a><span><h3>We briefly repeat our two claims and our arguments. The staff listens to him, in front of the school, for about twenty minutes.</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>
+                &#8618;We <a id="popup">contact<span><img width="100%" height="auto" src="media/invitfenzy.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> him again to set the conditions for a dialogue. He is expected at school at 16:00.
+
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2>
+                &#8618;In the meantime, work groups prepare the form and rules for welcoming Mr. Fenzy and the questions to ask him. The proposals are adopted collectively in an agora.
+                <br><a>&#8597;</a><span><h3>The questions we are preparing for Mr. Fenzy :<br>
+                What do you think are the challenges of design today ?<br>
+				What makes ENSCI unique in your eyes ?<br>
+				What is ENSCI's vision for tomorrow ?<br>
+				In your opinion, what kind of partnerships could enrich the school ?<br>
+				What is your vision of ENSCI on the international scene ?<br>
+				What are your concrete motivations to be director of ENSCI ?<br>
+				Given the current situation, how do you imagine running the school without the approval of students and staff? (especially in this logic of collaboration with the teams)</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>
+                &#8618;During the <a id="popup">meeting<span><img width="55%" height="auto" src="media/reunion.jpg" alt="slogan" /></span></a> with Mr. Fenzy, we silently listen to his arguments and motivations, and only ask the collectively approved questions.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -1em;">
+            <h2><a>&#8597;</a><span><h3>It provides very little new information in relation to its initial application, either in its general presentation or in its answers to questions. The project remains light and unconvincing in our eyes, both students and staff.<br>
+            However, he concedes that he does not want to "force fate" and that he is ready to withdraw his candidacy if he does not succeed in convincing us.</h3></span>
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>&#8618;Following the debriefing of this meeting, we inform him that he did not succeed in convincing us. Mr. Fenzy formally <a id="popup">withdraws<span><img width="50%" height="auto" src="media/fire.gif" alt="slogan" /></span></a> his application at 7pm, the ministry accepts it. 
+            </h2>
+        </div>
+        <div class="image" style="margin-top: -1em;">
+            <h2>
+                &#8618;M<sup>rs</sup> Diakité Kaba send us an email entitled <a id="popup"><i>Epilogue</i><span><img width="100%" height="auto" src="media/saranpilogue.png" alt="slogan" style="margin-left: -22%; filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.6));" /></span></a> to invite us to unblock the school.
+            </h2>
+        </div>
+
+
+				<div class="image">
+
+            <h1>21/11</h1>
+            <h2>
+                &#8618;An agora is held at 9:30 in order to gradually <a id="popup">unblock<span><img width="60%" height="auto" src="media/deblockade.gif" alt="slogan"/></span></a> the school and to ensure that mobilisation and caution are maintained.
+            </h2>
+        </div>
+        <div class="text" style="margin-top: -0.8em;">
+            <h2><a>&#8597;</a><span><h3>Mr. Fenzy's arbitrary appointment was a first issue. However, it reveals a fundamental problem in the process of appointing a director by the ministries as well as a desire for better involvement of students and staff in the governance model of our school.<br> We decide to take advantage of this common impulse to start a new phase of construction around these issues.</h3></span>
+            </h2>
+        </div>
+
+   		<br><br><br><br>
+    </div>
+
+    <div id="suitehistorique">
+
+		<div id="degradejaune"><br><br><br><br><br><br><!--<h4>scroll encore un peu</h4>--></div>
+
+	</div>
+
+
+	<script type="text/javascript" src="mur.js"></script>
+
+
+</body>
